@@ -1,16 +1,92 @@
 *{
     margin: 0;
-    padding: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #303030;
+    padding: 0px;
     box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: white;
+
 }
 
 body{
+    background-color: #f8f8f8;
     display: grid;
     place-content: center;
+    height: 100vh;
 }
 
-h1{
-    padding: 30px;
+.sprite{
+    display: flex;
+    gap: 20px;
+    animation: 4s infinite both run linear;
+    animation-direction: normal;
 }
+
+.sprite .dog{
+    height: 100px;
+    width: 120px;
+    background-color: aqua;
+    background-image: url(../img/DOG.png);
+    background-size: cover;
+    background-position: 100;
+    animation: .5s infinite step-end runDog;
+}
+
+.sprite .cat{
+    height: 100px;
+    width: 120px;
+    background-color: rgb(132, 0, 255);
+    background-image: url(../img/CAT.png);
+    background-size: 500%;
+    background-position: 1px;
+    animation: .5s infinite step-end runCat;
+}
+
+@keyframes runDog {
+    0% {
+    background-position: 1px;
+    }
+  
+    50% {
+        background-position: 125px;
+    }
+
+    100%{
+        background-position: 1px;
+    }
+
+  }
+
+  @keyframes runCat {
+    0% {
+    background-position: 1px;
+    }
+  
+    50% {
+        background-position: -150px;
+    }
+
+    100%{
+        background-position: 1px;
+    }
+
+  }
+
+
+  @keyframes run {
+    0% {
+        transform: translateX(0px);
+    }
+  
+    50% {
+        transform: translateX(500px) scaleX(1);
+    }
+    51%{
+        transform: translateX(500px) scaleX(-1);
+    }
+
+    100%{
+        transform: translateX(0px) scaleX(-1);
+    }
+
+  }
